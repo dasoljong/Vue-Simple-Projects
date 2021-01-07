@@ -4,9 +4,9 @@
     <button class="btn btn-info" @click="randomProfile">랜덤 유저 가져오기</button>
     <div class="personalCardWrapper">
       <ul>
-        <li v-bind:key="users">
-          <div><img :src="users[1].avatar" :alt="users[1].first_name"></div>
-          <span>{{users[1].first_name}} {{users[1].last_name}}</span>
+        <li v-for="user in users" v-bind:key="user">
+          <div><img :src="user.avatar" :alt="user.first_name"></div>
+          <span>{{user.first_name}} {{user.last_name}}</span>
         </li>
       </ul>
     </div>
