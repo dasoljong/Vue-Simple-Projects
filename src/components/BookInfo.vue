@@ -13,12 +13,12 @@
         </tr>
         </thead>
         <tbody>
-          <tr v-for="ab in users"  v-bind:key="ab">
-            <td><a href=""></a>{{ab.id}}</td>
-            <td>{{ab.name}}</td>
-            <td>{{ab.year}}</td>
-            <td>{{ab.color}}</td>
-            <td>{{ab}}</td>
+          <tr v-for="user in users"  v-bind:key="user">
+            <td><a href=""></a>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.year}}</td>
+            <td>{{user.color}}</td>
+            <td>{{user}}</td>
           </tr>
         </tbody>
       </table>
