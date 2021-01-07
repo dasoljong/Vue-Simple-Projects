@@ -3,20 +3,20 @@
 <!--    <img alt="Vue logo" src="./assets/logo.png">-->
 <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <BookInfo />
-    <Kakao />
+    <UserProfile />
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue';
 import BookInfo from './components/BookInfo.vue';
-import Kakao from './components/Kakao.vue';
+import UserProfile from "@/components/UserProfile";
 
 export default {
   name: 'App',
   components: {
+    UserProfile,
     BookInfo,
-    Kakao,
   }
 }
 </script>
