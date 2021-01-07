@@ -62,7 +62,6 @@ export default {
   padding-left: unset;
 }
 .randomProfileContainer ul li {
-  display: none;
   list-style: none;
   width: 33%;
 }
