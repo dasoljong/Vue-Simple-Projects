@@ -33,7 +33,8 @@ export default {
   name: 'address-book',
   data() {
     return {
-      books: []
+      books: [],
+      isActive: false,
     };
   },
   methods: {
