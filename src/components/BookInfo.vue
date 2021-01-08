@@ -7,18 +7,18 @@
         <thead class="tableHead">
         <tr>
           <th>ID</th>
-          <th>NAME</th>
+          <th>TITLE</th>
           <th>YEAR</th>
           <th>Cover Color</th>
         </tr>
         </thead>
         <tbody>
-          <tr v-for="user in users"  v-bind:key="user">
-            <td><a href=""></a>{{user.id}}</td>
-            <td>{{user.name}}</td>
-            <td>{{user.year}}</td>
-            <td>{{user.color}}</td>
-            <td>{{user}}</td>
+          <tr v-for="book in books"  v-bind:key="book">
+            <td><a href=""></a>{{book.id}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.year}}</td>
+            <td>{{book.color}}</td>
+            <td>{{book}}</td>
           </tr>
         </tbody>
       </table>
@@ -33,7 +33,8 @@ export default {
   name: 'address-book',
   data() {
     return {
-      users: []
+      books: [],
+      isActive: false,
     };
   },
   methods: {
@@ -42,7 +43,7 @@ export default {
           .then( res => {
             // handle success
             console.log(res);
-            this.users = res.data.data
+            this.books = res.data.data
           })
           .catch(err => {
             // handle error
