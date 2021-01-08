@@ -3,8 +3,8 @@
     <h1>Random User</h1>
     <button class="btn btn-info" @click="randomProfile">랜덤 유저 가져오기</button>
     <div class="personalCardWrapper">
-      <div><img :src="user.avatar" :alt="user.first_name"></div>
-      <span>{{user.first_name}} {{user.last_name}}</span>
+      <div><img :src="randomUser.avatar" :alt="randomUser.first_name"></div>
+      <span>{{randomUser.first_name}} {{randomUser.last_name}}</span>
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
   name: "randomProfileContainer",
   data() {
     return {
-      user: '',
+      randomUser: '',
       users: [],
       randomNum: 0,
     }
@@ -28,7 +28,7 @@ export default {
             // handle success
             this.users = res.data.data // data 가져와서 users에 json으로 저장
             this.randomNum = Math.floor(Math.random() * this.users.length) // random number 생성
-            this.user = this.users[this.randomNum]
+            this.randomUser = this.users[this.randomNum]
           })
           .catch(err => {
             // handle error
