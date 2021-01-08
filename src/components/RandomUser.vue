@@ -16,7 +16,7 @@ export default {
   name: "randomProfileContainer",
   data() {
     return {
-      user: [],
+      user: '',
       users: [],
       randomNum: 0,
     }
@@ -28,7 +28,7 @@ export default {
             // handle success
             this.users = res.data.data // data 가져와서 users에 json으로 저장
             this.randomNum = Math.floor(Math.random() * this.users.length) // random number 생성
-            this.user = this.users[this.randomNum] // user에 랜덤 프로필 지정해서 json으로 저장
+            this.user = this.users[this.randomNum]
           })
           .catch(err => {
             // handle error
