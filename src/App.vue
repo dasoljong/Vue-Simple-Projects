@@ -3,6 +3,7 @@
     <BookInfo />
     <UserProfile />
     <RandomUser />
+    <Weather />
   </div>
 </template>
 
@@ -10,6 +11,8 @@
 import BookInfo from './components/BookInfo.vue';
 import UserProfile from "./components/UserProfile.vue";
 import RandomUser from "./components/RandomUser.vue";
+import Weather from "./components/Weather.vue"
+
 
 export default {
   name: 'App',
@@ -17,6 +20,7 @@ export default {
     UserProfile,
     BookInfo,
     RandomUser,
+    Weather,
   }
 }
 </script>
