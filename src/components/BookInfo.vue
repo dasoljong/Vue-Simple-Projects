@@ -5,20 +5,20 @@
     <div class="mainContentContainer">
       <table class="tableContainer">
         <thead class="tableHead">
-        <tr>
-          <th>ID</th>
-          <th>TITLE</th>
-          <th>YEAR</th>
-          <th>Cover Color</th>
-        </tr>
+          <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>YEAR</th>
+            <th>Cover Color</th>
+          </tr>
         </thead>
         <tbody>
-          <tr v-for="book in books"  v-bind:key="book">
-            <td><a href=""></a>{{book.id}}</td>
-            <td>{{book.name}}</td>
-            <td>{{book.year}}</td>
-            <td>{{book.color}}</td>
-            <td>{{book}}</td>
+          <tr v-for="book in books" v-bind:key="book">
+            <td><a href=""></a>{{ book.id }}</td>
+            <td>{{ book.name }}</td>
+            <td>{{ book.year }}</td>
+            <td>{{ book.color }}</td>
+            <td>{{ book }}</td>
           </tr>
         </tbody>
       </table>
@@ -27,37 +27,36 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-  name: 'address-book',
+  name: "address-book",
   data() {
     return {
       books: [],
-      isActive: false,
+      isActive: false
     };
   },
   methods: {
-    getCustomerInfo: function(){
-      axios.get('https://reqres.in/api/unknown')
-          .then( res => {
-            // handle success
-            console.log(res);
-            this.books = res.data.data
-          })
-          .catch(err => {
-            // handle error
-            console.log(err);
-          })
-          .then(() => {
-            // always executed
-          });
-    },
+    getCustomerInfo: function() {
+      axios
+        .get("https://reqres.in/api/unknown")
+        .then(res => {
+          // handle success
+          console.log(res);
+          this.books = res.data.data;
+        })
+        .catch(err => {
+          // handle error
+          console.log(err);
+        })
+        .then(() => {
+          // always executed
+        });
+    }
   }
-}
-
+};
 </script>
-
 
 <style>
 .addressBook {
