@@ -45,15 +45,15 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
 .randomProfileContainer {
   margin: 200px 0;
-}
-.randomProfileContainer h1 {
-  padding-bottom: 20px;
-  border-bottom: 1px solid darkgrey;
-}
-.randomProfileContainer .btn-info {
-  margin: 20px 0;
+  .h1 {
+    padding-bottom: 20px;
+    border-bottom: 1px solid darkgrey;
+  }
+  .btn-info {
+    margin: 20px 0;
+  }
 }
 </style>
