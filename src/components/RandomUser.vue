@@ -45,7 +45,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .randomProfileContainer {
   margin: 200px 0;
 }
