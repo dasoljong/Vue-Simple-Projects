@@ -34,50 +34,53 @@ export default {
   data() {
     return {
       books: [],
-      isActive: false
+      isActive: false,
     };
   },
   methods: {
-    getCustomerInfo: function() {
+    getCustomerInfo: function () {
       axios
         .get("https://reqres.in/api/unknown")
-        .then(res => {
+        .then((res) => {
           // handle success
           console.log(res);
           this.books = res.data.data;
         })
-        .catch(err => {
+        .catch((err) => {
           // handle error
           console.log(err);
         })
         .then(() => {
           // always executed
         });
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
+<style lang="scss">
 .addressBook {
   margin-top: 200px;
-}
-.addressBook h1 {
-  width: 100%;
-  border-bottom: 1px solid darkgrey;
-  padding-bottom: 20px;
-  margin-bottom: unset;
-}
-.addressBook .btn {
-  margin: 20px 0;
-}
-
-.addressBook .tableContainer {
-  width: 100%;
-}
-.addressBook .tableHead {
-  width: 100%;
-  background-color: black;
+  h1 {
+    width: 100%;
+    border-bottom: 1px solid darkgrey;
+    padding-bottom: 20px;
+    margin-bottom: unset;
+  }
+  .btn {
+    margin: 20px 0;
+  }
+  .tableContainer {
+    width: 100%;
+    .tableHead {
+      width: 100%;
+      background-color: black;
+      tr th {
+        padding: 10px 20px;
+        color: aliceblue;
+      }
+    }
+  }
 }
 .addressBook .tableContainer tr th {
   padding: 10px 20px;
