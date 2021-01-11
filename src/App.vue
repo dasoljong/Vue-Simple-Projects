@@ -4,6 +4,7 @@
     <UserProfile />
     <RandomUser />
     <Weather />
+    <CountdownTimer />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import BookInfo from "./components/BookInfo.vue";
 import UserProfile from "./components/UserProfile.vue";
 import RandomUser from "./components/RandomUser.vue";
 import Weather from "./components/Weather.vue";
+import CountdownTimer from "./components/CountdownTimer.vue";
 
 export default {
   name: "App",
@@ -19,8 +21,9 @@ export default {
     UserProfile,
     BookInfo,
     RandomUser,
-    Weather
-  }
+    Weather,
+    CountdownTimer,
+  },
 };
 </script>
 
