@@ -48,7 +48,7 @@ export default {
 <style lang="scss">
 .randomProfileContainer {
   margin: 200px 0;
-  .h1 {
+  h1 {
     padding-bottom: 20px;
     border-bottom: 1px solid darkgrey;
   }
