@@ -18,8 +18,6 @@ const router = new VueRouter({
     { path: "/weather", component: Weather },
     { path: "/user-profile", component: UserProfile },
     { path: "/current-time", component: CurrentTime },
-
-
   ],
 });
 

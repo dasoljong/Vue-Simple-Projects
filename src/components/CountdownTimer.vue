@@ -45,15 +45,15 @@ export default {
       const currentDate = new Date();
       const totalSeconds = (eventDate - currentDate) / 1000;
 
-      const days_ = Math.floor(totalSeconds / 3600 / 24);
-      const hours_ = Math.floor(totalSeconds / 3600) % 24;
-      const minutes_ = Math.floor(totalSeconds / 60) % 60;
-      const seconds_ = Math.floor(totalSeconds) % 60;
+      const daysLeft = Math.floor(totalSeconds / 3600 / 24);
+      const hoursLeft = Math.floor(totalSeconds / 3600) % 24;
+      const minutesLeft = Math.floor(totalSeconds / 60) % 60;
+      const secondsLeft = Math.floor(totalSeconds) % 60;
 
-      this.days = days_;
-      this.hours = hours_;
-      this.minutes = minutes_;
-      this.seconds = seconds_;
+      this.days = daysLeft;
+      this.hours = hoursLeft;
+      this.minutes = minutesLeft;
+      this.seconds = secondsLeft;
     },
   },
   created() {
