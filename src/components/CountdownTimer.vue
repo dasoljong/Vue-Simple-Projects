@@ -1,5 +1,10 @@
 <template>
   <div class="countdownTimerContainer">
+    <img
+      class="bgImg"
+      src="https://images.unsplash.com/photo-1534274867514-d5b47ef89ed7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3670&q=80"
+      alt="error image"
+    />
     <h1>Until My Birth Day</h1>
     <div class="countdownContentContainer">
       <div class="countdownEl days-c">
@@ -60,13 +65,6 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  background-image: url("https://images.unsplash.com/photo-1534274867514-d5b47ef89ed7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3670&q=80");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 .countdownTimerContainer {
   display: flex;
   flex-direction: column;
@@ -75,14 +73,24 @@ body {
   justify-content: center;
   width: 100%;
   height: 100%;
+  .bgImg {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 990;
+  }
   h1 {
     font-weight: bold;
     font-size: 4rem;
     margin-top: 5rem;
+    z-index: 999;
   }
   .countdownContentContainer {
-    margin-top: 3rem;
     display: flex;
+    margin-top: 3rem;
+    z-index: 999;
     .countdownEl {
       text-align: center;
       .big-text {
