@@ -46,24 +46,24 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .userProfileContainer {
   margin: 200px 0;
-}
-.userProfileContainer h1 {
-  padding-bottom: 20px;
-  border-bottom: 1px solid darkgrey;
-}
-.userProfileContainer .btn-info {
-  margin: 20px 0;
-}
-.userProfileContainer ul {
-  width: 100%;
-  display: flex;
-  padding-left: unset;
-}
-.userProfileContainer ul li {
-  list-style: none;
-  width: 33%;
+  h1 {
+    padding-bottom: 20px;
+    border-bottom: 1px solid darkgrey;
+  }
+  .btn-info {
+    margin: 20px 0;
+  }
+  ul {
+    width: 100%;
+    display: flex;
+    padding-left: unset;
+    li {
+      list-style: none;
+      width: 33%;
+    }
+  }
 }
 </style>
