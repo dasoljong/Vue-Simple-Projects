@@ -1,6 +1,6 @@
 <template>
   <div class="countdownTimerContainer">
-    <div class="backgroundImg"></div>
+    <div class="backgroundImg">asdfasdf</div>
   </div>
 </template>
 
