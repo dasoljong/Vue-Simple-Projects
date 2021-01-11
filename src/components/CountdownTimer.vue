@@ -3,19 +3,19 @@
     <h1>Until My Birth Day</h1>
     <div class="countdownContentContainer">
       <div class="countdownEl days-c">
-        <p class="big-text" id="days">{{this.days}}</p>
+        <p class="big-text" id="days">{{ this.days }}</p>
         <span>days</span>
       </div>
       <div class="countdownEl hours-c">
-        <p class="big-text" id="hours">{{this.hours}}</p>
+        <p class="big-text" id="hours">{{ this.hours }}</p>
         <span>hours</span>
       </div>
       <div class="countdownEl mins-c">
-        <p class="big-text" id="mins">{{this.minutes}}</p>
+        <p class="big-text" id="mins">{{ this.minutes }}</p>
         <span>mins</span>
       </div>
       <div class="countdownEl seconds-c">
-        <p class="big-text" id="seconds">{{this.seconds}}</p>
+        <p class="big-text" id="seconds">{{ this.seconds }}</p>
         <span>seconds</span>
       </div>
     </div>
@@ -28,10 +28,10 @@ export default {
   data() {
     return {
       dday: "8 July 2021",
-      days: '',
-      hours:'',
-      minutes:'',
-      seconds: '',
+      days: "",
+      hours: "",
+      minutes: "",
+      seconds: "",
     };
   },
   methods: {
@@ -41,15 +41,14 @@ export default {
       const totalSeconds = (eventDate - currentDate) / 1000;
 
       const days_ = Math.floor(totalSeconds / 3600 / 24);
-      const hours_ = Math.floor(totalSeconds/3600) % 24;
+      const hours_ = Math.floor(totalSeconds / 3600) % 24;
       const minutes_ = Math.floor(totalSeconds / 60) % 60;
-      const seconds_ = Math.floor(totalSeconds) % 60
+      const seconds_ = Math.floor(totalSeconds) % 60;
 
       this.days = days_;
       this.hours = hours_;
       this.minutes = minutes_;
       this.seconds = seconds_;
-
     },
   },
   created() {
