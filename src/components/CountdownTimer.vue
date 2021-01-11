@@ -1,12 +1,62 @@
 <template>
   <div class="countdownTimerContainer">
-    <h2>Until new beginnings</h2>
+    <h1>Until My Birth Day</h1>
+    <div class="countdownContentContainer">
+      <div class="countdownEl days-c">
+        <p class="big-text" id="days">{{this.days}}</p>
+        <span>days</span>
+      </div>
+      <div class="countdownEl hours-c">
+        <p class="big-text" id="hours">{{this.hours}}</p>
+        <span>hours</span>
+      </div>
+      <div class="countdownEl mins-c">
+        <p class="big-text" id="mins">{{this.minutes}}</p>
+        <span>mins</span>
+      </div>
+      <div class="countdownEl seconds-c">
+        <p class="big-text" id="seconds">{{this.seconds}}</p>
+        <span>seconds</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Countdown Timer",
+  name: "CountdownTimer",
+  data() {
+    return {
+      dday: "8 July 2021",
+      days: '',
+      hours:'',
+      minutes:'',
+      seconds: '',
+    };
+  },
+  methods: {
+    startCountdown: function () {
+      const eventDate = new Date(this.dday);
+      const currentDate = new Date();
+      const totalSeconds = (eventDate - currentDate) / 1000;
+
+      const days_ = Math.floor(totalSeconds / 3600 / 24);
+      const hours_ = Math.floor(totalSeconds/3600) % 24;
+      const minutes_ = Math.floor(totalSeconds / 60) % 60;
+      const seconds_ = Math.floor(totalSeconds) % 60
+
+      this.days = days_;
+      this.hours = hours_;
+      this.minutes = minutes_;
+      this.seconds = seconds_;
+
+    },
+  },
+  created() {
+    this.startCountdown();
+
+    setInterval(this.startCountdown, 1000);
+  },
 };
 </script>
 
@@ -19,8 +69,33 @@ body {
   background-size: cover;
 }
 .countdownTimerContainer {
-  he {
-    z-index: 999;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  h1 {
+    font-weight: bold;
+    font-size: 4rem;
+    margin-top: 5rem;
+  }
+  .countdownContentContainer {
+    margin-top: 3rem;
+    display: flex;
+    .countdownEl {
+      text-align: center;
+      .big-text {
+        font-size: 6rem;
+        font-weight: bold;
+        line-height: 1;
+        margin: 0 2rem;
+      }
+      span {
+        font-size: 1.3rem;
+      }
+    }
   }
 }
 </style>
