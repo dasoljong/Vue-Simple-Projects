@@ -5,7 +5,7 @@
       src="https://images.unsplash.com/photo-1534274867514-d5b47ef89ed7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3670&q=80"
       alt="error image"
     />
-    <h1>Until My Birth Day</h1>
+    <h1>New Years Day</h1>
     <div class="countdownContentContainer">
       <div class="countdownEl days-c">
         <p class="big-text" id="days">{{ this.days }}</p>
@@ -32,7 +32,7 @@ export default {
   name: "CountdownTimer",
   data() {
     return {
-      dday: "8 July 2021",
+      dday: "1 Jan 2022",
       days: "",
       hours: "",
       minutes: "",
