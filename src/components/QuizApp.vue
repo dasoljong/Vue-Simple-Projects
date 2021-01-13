@@ -151,21 +151,17 @@ export default {
     overflow: hidden;
     margin: 200px auto;
     vertical-align: middle;
-
     h2 {
-      padding: 30px 30px;
+      padding: 20px 30px 10px;
     }
-
     ul {
       list-style-type: none;
-
       li {
         input {
           margin-right: 5px;
         }
       }
     }
-
     button {
       background-color: mediumpurple;
       border: none;
@@ -177,7 +173,6 @@ export default {
       cursor: pointer;
       transition-duration: 0.5s;
     }
-
     button:hover {
       background-color: rebeccapurple;
     }
