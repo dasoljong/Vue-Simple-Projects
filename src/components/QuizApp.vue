@@ -48,7 +48,7 @@ export default {
       finalScore: "",
       quizData: [
         {
-          question: "다솔이의 생일은?",
+          question: "다솔이 생일은?",
           a: "7월 6일",
           b: "7월 8일",
           c: "7월 10일",
@@ -62,6 +62,14 @@ export default {
           c: "9896",
           d: "9897",
           correct: "d",
+        },
+        {
+          question: "우리 사귄 날짜는?",
+          a: "9월 18일",
+          b: "9월 19일",
+          c: "9월 20일",
+          d: "9월 21일",
+          correct: "b",
         },
         {
           question: "우리 첫키스 날짜는?",
@@ -78,14 +86,6 @@ export default {
           c: "금",
           d: "토",
           correct: "a",
-        },
-        {
-          question: "우리 사귄 날짜는?",
-          a: "9월 18일",
-          b: "9월 19일",
-          c: "9월 20일",
-          d: "9월 21일",
-          correct: "b",
         },
       ],
     };
