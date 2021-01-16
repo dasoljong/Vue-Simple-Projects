@@ -7,6 +7,7 @@ import Weather from "@/components/Weather";
 import UserProfile from "@/components/UserProfile";
 import CurrentTime from "@/components/CurrentTime";
 import QuizApp from "@/components/QuizApp";
+import RecipeApp from "@/components/RecipeApp";
 
 Vue.use(VueRouter);
 
@@ -20,6 +21,7 @@ const router = new VueRouter({
     { path: "/user-profile", component: UserProfile },
     { path: "/current-time", component: CurrentTime },
     { path: "/quiz", component: QuizApp },
+    { path: "/recipe", component: RecipeApp },
   ],
 });
 
