@@ -1,4 +1,4 @@
-# address-book
+# simple projects for fun
 
 ## Project setup
 ```
