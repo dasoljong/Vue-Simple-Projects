@@ -93,10 +93,9 @@ export default {
           )
           .then((res) => {
             // handle success
-            console.log(res.data.meals);
+            this.meals = res.data.meals;
             headerContainer.classList.remove("active");
             searchContainer.classList.remove("active");
-            this.meals = res.data.meals;
             favContainer.classList.add("active");
             searchFoodsContainer.classList.add("active");
           })
