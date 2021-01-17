@@ -13,7 +13,7 @@
     </header>
     <div class="favContainer">
       <ul>
-        <li v-for="food in foods" v-bind:key="food">
+        <li v-for="food in foods" v-bind:key="food" @click="findThis">
           <img :src="food.strCategoryThumb" :alt="food.strCategory" />
           <div>{{ food.strCategory }}</div>
         </li>
@@ -21,7 +21,7 @@
     </div>
     <div class="searchFoodsContainer">
       <ul>
-        <li v-for="meal in meals" v-bind:key="meal">
+        <li v-for="meal in meals" v-bind:key="meal" @click="getRecipe">
           <img :src="meal.strMealThumb" :alt="meal.strMeal" />
           <div>{{ meal.strMeal }}</div>
         </li>
@@ -47,6 +47,14 @@
         </button>
       </div>
     </div>
+    <div class="recipePopUpContainer">
+      <div class="headerWrapper">
+        <h2>{{ this.selectedTitle }}</h2>
+        <i class="fas fa-times closeBtn" @click="closePopUp"></i>
+      </div>
+      <img :src="this.selectedImg" alt="#" />
+      <p class="recipeContent">{{ this.selectedInstructions }}</p>
+    </div>
   </div>
 </template>
 
@@ -58,13 +66,22 @@ export default {
   data() {
     return {
       search_text: "",
+      search_id: "",
       foods: [],
       meals: [],
+      selectedTitle: "",
+      selectedImg: "",
+      selectedInstructions: "",
       randomMealImg: "",
       randomMealTitle: "",
     };
   },
   methods: {
+    findThis: function (e) {
+      this.search_text = e.target.alt;
+      console.log(this.search_text);
+      this.getMealsBySearch();
+    },
     openSearchBar: function () {
       const headerContainer = document.querySelector(".headerContainer");
       const searchContainer = document.querySelector(".searchContainer");
@@ -92,19 +109,77 @@ export default {
           .then((res) => {
             // handle success
             this.meals = res.data.meals;
+            console.log(res.data.meals.idMeal);
             headerContainer.classList.remove("active");
             searchContainer.classList.remove("active");
             favContainer.classList.add("active");
             searchFoodsContainer.classList.add("active");
+            // this.search_id = res.data.meals.food.strId
           })
           .catch((err) => {
             // handle error
             console.log(err);
+            alert("목록에 없습니다.");
           })
           .then(() => {
             // always executed
           });
       }
+    },
+    getRecipe: function (e) {
+      const recipePopUp = document.querySelector(".recipePopUpContainer");
+
+      axios
+        .get(
+          "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
+            `${this.search_text}`
+        )
+        .then((res) => {
+          // handle success
+          console.log(res);
+
+          this.meals = res.data.meals;
+
+          for (let i = 0; i < this.meals.length; i++) {
+            // console.log(this.meals[i]);
+            if (this.meals[i].strMeal == e.target.alt) {
+              // console.log(this.meals[i]);
+              this.selectedTitle = this.meals[i].strMeal;
+              this.selectedImg = this.meals[i].strMealThumb;
+              this.search_id = this.meals[i].idMeal;
+              // console.log(this.search_id);
+              this.getInstructions();
+            }
+          }
+        })
+        .catch((err) => {
+          // handle error
+          console.log(err);
+        })
+        .then(() => {
+          // always executed
+        });
+
+      recipePopUp.classList.add("active");
+    },
+    getInstructions: function () {
+      axios
+        .get(
+          "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" +
+            `${this.search_id}`
+        )
+        .then((res) => {
+          // handle success
+          console.log(res);
+          this.selectedInstructions = res.data.meals[0].strInstructions;
+        })
+        .catch((err) => {
+          // handle error
+          console.log(err);
+        })
+        .then(() => {
+          // always executed
+        });
     },
     getHeaderFood: function () {
       axios
@@ -137,6 +212,12 @@ export default {
           // always executed
         });
     },
+    closePopUp: function () {
+      const recipePopUpContainer = document.querySelector(
+        ".recipePopUpContainer"
+      );
+      recipePopUpContainer.classList.remove("active");
+    },
   },
   created() {
     this.getHeaderFood();
@@ -152,7 +233,6 @@ export default {
 .recipeContainer {
   width: 100%;
   overflow: hidden;
-
   header {
     width: 100%;
     height: 40px;
@@ -296,6 +376,7 @@ export default {
       }
       img {
         width: 100%;
+        max-height: 280px;
       }
     }
     .mealBody {
@@ -316,6 +397,33 @@ export default {
         }
       }
     }
+  }
+  .recipePopUpContainer {
+    display: none;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    .headerWrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px;
+      h2 {
+        text-align: center;
+      }
+      .closeBtn {
+        position: absolute;
+        top: 25px;
+        right: 3%;
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .recipePopUpContainer.active {
+    display: block;
   }
 }
 </style>
