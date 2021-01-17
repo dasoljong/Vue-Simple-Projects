@@ -60,8 +60,6 @@ export default {
       search_text: "",
       foods: [],
       meals: [],
-      mealImg: "",
-      mealTitle: "",
       randomMealImg: "",
       randomMealTitle: "",
     };
@@ -209,6 +207,7 @@ export default {
         list-style: none;
         text-align: center;
         padding: 10px 5px;
+        margin: 0 auto;
         img {
           width: 70px;
           height: 70px;
@@ -239,6 +238,7 @@ export default {
         list-style: none;
         text-align: center;
         padding: 10px 5px;
+        margin: 0 auto;
         img {
           width: 70px;
           height: 70px;
