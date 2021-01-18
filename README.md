@@ -1,4 +1,13 @@
-# simple projects for fun
+# Vue.js simple projects for fun
+
+1. Book Info
+2. Countdown Timer
+3. Current Time
+4. Quiz App
+5. Random User
+6. Recipe App
+7. User Profile
+8. City Weather
 
 ## Project setup
 ```
