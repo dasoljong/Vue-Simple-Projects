@@ -1,4 +1,4 @@
-# simple projects for fun
+# Vue.js simple projects for fun
 
 1. Book Info
 2. Countdown Timer
