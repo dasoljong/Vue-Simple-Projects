@@ -29,20 +29,10 @@ export default {
       const noteAppContainerEl = document.querySelector(".noteAppContainer");
       const note = document.createElement("div");
 
-      note.classList.add("note");
-
-      note.innerHTML = `<div class="notes">
-      <div class="tools">
-        <button>
-          <i class="fas fa-edit edit" @click="doEdit"></i>
-        </button>
-        <button @click="deleteNote">
-          <i class="fas fa-trash delete"></i>
-        </button>
-      </div>
-      <div class="main hidden"></div>
-      <textarea class="textArea" @input="update" v-model="value"></textarea>
-    </div>`;
+      note.insertAdjacentHTML(
+        "afterbegin",
+        '<div class="notes"><div class="tools"><button><i class="fas fa-edit edit" @click="doEdit"></i></button><button @click="deleteNote"><i class="fas fa-trash delete"></i></button></div><div class="main hidden"></div><textarea class="textArea" @input="update" v-model="value"></textarea></div>'
+      );
 
       noteAppContainerEl.appendChild(note);
     },
@@ -50,6 +40,7 @@ export default {
       console.log("1");
     },
   },
+  created() {},
 };
 </script>
 
