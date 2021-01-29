@@ -1,6 +1,6 @@
 <template>
   <div class="noteAppContainer">
-    <button class="add" @click="addNewNote">Add note</button>
+    <button class="add" @click="addNewNote">Add note!</button>
   </div>
 </template>
 
