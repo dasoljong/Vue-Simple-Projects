@@ -9,6 +9,7 @@ import CurrentTime from "@/components/CurrentTime";
 import QuizApp from "@/components/QuizApp";
 import RecipeApp from "@/components/RecipeApp";
 import NoteApp from "@/components/NoteApp";
+import LottoApp from "@/components/Lotto";
 
 Vue.use(VueRouter);
 
@@ -24,6 +25,7 @@ const router = new VueRouter({
     { path: "/quiz", component: QuizApp },
     { path: "/recipe", component: RecipeApp },
     { path: "/note", component: NoteApp },
+    { path: "/lotto", component: LottoApp },
   ],
 });
 
