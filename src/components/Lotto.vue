@@ -1,6 +1,6 @@
 <template>
   <div class="lottoContainer">
-    <button>Get Number!</button>
+    <button @click="pushNumbToArr">Get Number!</button>
     <h2>Winning Num</h2>
     <ul>
       <li></li>
@@ -13,7 +13,9 @@ export default {
   data() {
     return {
       numbers: [],
-      number: [],
+      selectedNum: "",
+      selectedNumbs: [],
+      winningNumbs: [],
     }
   },
   methods: {
@@ -24,25 +26,41 @@ export default {
       this.numbers = this.numbers.split(" ");
       this.numbers.splice(60, 1);
     },
-    getWinningNumb: function(min, max){
-      for (let i=0; i<6; i++){
-        if(i<6) {
-          min = Math.ceil(1);
-          max = Math.floor(60);
-          let selectedNum =  Math.floor(Math.random() * (max-min + 1)) + min;
-          this.number = this.number + selectedNum + " ";
-        }
-      }
-      this.number = this.number.split(" ");
-      this.number.splice(6, 1);
-      this.number.sort();
-      console.log(this.number);
-    }
+    getRandomNumb: function(min, max){
+        min = Math.ceil(1);
+        max = Math.floor(60);
+        this.selectedNum = Math.floor(Math.random() * (max - min + 1)) + min;
 
+        console.log(this.selectedNum);
+
+    },
+    pushNumbToArr: function() {
+      this.getRandomNumb();
+
+      if(this.winningNumbs.length < 6) {
+        console.log("1");
+
+        for(let i=0; this.numbers.length; i++) {
+          console.log("2");
+          if(this.numbers[i] == this.selectedNum) {
+            console.log("3");
+            // console.log(this.selectedNum);
+          } else {
+            console.log("4");
+            this.winningNumbs.push(this.selectedNum);
+            this.winningNumbs.sort(function (a,b) {
+              return a-b
+            });
+            console.log("5");
+          }
+        }
+        console.log(this.winningNumbs);
+      }
+    }
   },
   created() {
     this.getFullNumb();
-    this.getWinningNumb();
+    // this.getRandomNumb();
   }
 }
 </script>
