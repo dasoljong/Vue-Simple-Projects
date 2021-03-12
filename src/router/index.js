@@ -9,11 +9,8 @@ import CurrentTime from "@/components/CurrentTime";
 import QuizApp from "@/components/QuizApp";
 import RecipeApp from "@/components/RecipeApp";
 import NoteApp from "@/components/NoteApp";
-<<<<<<< HEAD
 import todoList from "@/components/todoList";
-=======
 import LottoApp from "@/components/Lotto";
->>>>>>> 42e4b1d31ae78fea3ba02b97dd83b72365684339
 
 Vue.use(VueRouter);
 
@@ -29,13 +26,9 @@ const router = new VueRouter({
     { path: "/quiz", component: QuizApp },
     { path: "/recipe", component: RecipeApp },
     { path: "/note", component: NoteApp },
-<<<<<<< HEAD
-    { path: "/todo-list", component: todoList }
-  ]
-=======
+    { path: "/todo-list", component: todoList },
     { path: "/lotto", component: LottoApp },
   ],
->>>>>>> 42e4b1d31ae78fea3ba02b97dd83b72365684339
 });
 
 export default router;
