@@ -60,6 +60,6 @@ export default {
 }
 .lottoContainer .winningNumberWrapper li {
   list-style: none;
-  margin-right: 20px;
+  margin-right: 21px;
 }
 </style>
