@@ -29,7 +29,6 @@ const router = new VueRouter({
     { path: "/todo-list", component: todoList },
     { path: "/lotto", component: LottoApp },
   ],
->>>>>>> 42e4b1d31ae78fea3ba02b97dd83b72365684339
 });
 
 export default router;
