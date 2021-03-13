@@ -187,6 +187,7 @@ export default {
         .then((res) => {
           // handle success
           this.foods = res.data.categories;
+          console.log("food: " + this.foods);
         })
         .catch((err) => {
           // handle error
