@@ -7,7 +7,11 @@
       Again!
     </button>
     <ul class="winningNumberWrapper">
-      <li class="lottoBall" v-for="number in numbers" :key="number">
+      <li
+        class="lottoBall"
+        v-for="number in numbers"
+        :key="number"
+      >
         {{ number }}
       </li>
     </ul>
@@ -48,7 +52,6 @@ export default {
       this.getRandomNumbers();
     },
   },
-  created() {},
 };
 </script>
 
@@ -60,6 +63,17 @@ export default {
 }
 .lottoContainer .winningNumberWrapper li {
   list-style: none;
+  margin-right: 20px;
+}
+.lottoContainer .winningNumberWrapper li {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  text-align: center;
   margin-right: 20px;
 }
 </style>
