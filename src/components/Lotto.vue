@@ -74,6 +74,6 @@ export default {
   line-height: 40px;
   font-size: 20px;
   text-align: center;
-  margin-right: 20px;
+  margin-right: 21px;
 }
 </style>
