@@ -1,8 +1,15 @@
 <template>
   <div class="lottoContainer">
-    <button @click="getFullNumber">Get Number!</button>
+    <button v-if="numbers.length < 6" @click="getRandomNumbers">
+      Get Numbers!
+    </button>
+    <button v-if="numbers.length == 6" @click="getRandomNumbersAgain">
+      Again!
+    </button>
     <ul class="winningNumberWrapper">
-      <li v-for="number in numbers" :key="number">{{ number }}</li>
+      <li class="lottoBall" v-for="number in numbers" :key="number">
+        {{ number }}
+      </li>
     </ul>
   </div>
 </template>
@@ -16,7 +23,7 @@ export default {
     };
   },
   methods: {
-    getFullNumber: () => {
+    getRandomNumbers() {
       const fullNumber = Array(45)
         .fill()
         .map((n, i) => {
@@ -31,16 +38,28 @@ export default {
       const winNumber = shuffle.splice(0, 6).sort((a, b) => {
         return a - b;
       });
-      console.log(winNumber);
-      for (let i=0; i<winNumber.length; i++) {
-        // console.log("numbers: " + this.numbers);
-        console.log(winNumber[i]);
+      for (let i = 0; i < winNumber.length; i++) {
+        this.numbers.push(winNumber[i]);
       }
-      console.log("numbers: ");
+      console.log(this.numbers);
+    },
+    getRandomNumbersAgain() {
+      this.numbers = [];
+      this.getRandomNumbers();
     },
   },
   created() {},
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.lottoContainer .winningNumberWrapper {
+  display: flex;
+  margin-top: 50px;
+  text-align: center;
+}
+.lottoContainer .winningNumberWrapper li {
+  list-style: none;
+  margin-right: 20px;
+}
+</style>
