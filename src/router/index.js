@@ -11,6 +11,7 @@ import RecipeApp from "@/components/RecipeApp";
 import NoteApp from "@/components/NoteApp";
 import todoList from "@/components/todoList";
 import LottoApp from "@/components/Lotto";
+import Todo from "@/components/Todo";
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,7 @@ const router = new VueRouter({
     { path: "/note", component: NoteApp },
     { path: "/todo-list", component: todoList },
     { path: "/lotto", component: LottoApp },
+    { path: "/todo", component: Todo },
   ],
 });
 
