@@ -10,6 +10,7 @@ import QuizApp from "@/components/QuizApp";
 import RecipeApp from "@/components/RecipeApp";
 import NoteApp from "@/components/NoteApp";
 import todoList from "@/components/todoList";
+import LottoApp from "@/components/Lotto";
 
 Vue.use(VueRouter);
 
@@ -25,8 +26,9 @@ const router = new VueRouter({
     { path: "/quiz", component: QuizApp },
     { path: "/recipe", component: RecipeApp },
     { path: "/note", component: NoteApp },
-    { path: "/todo-list", component: todoList }
-  ]
+    { path: "/todo-list", component: todoList },
+    { path: "/lotto", component: LottoApp },
+  ],
 });
 
 export default router;
