@@ -9,8 +9,9 @@ import CurrentTime from "@/components/CurrentTime";
 import QuizApp from "@/components/QuizApp";
 import RecipeApp from "@/components/RecipeApp";
 import NoteApp from "@/components/NoteApp";
-import LottoApp from "@/components/Lotto";
+import LottoApp from "@/components/lotto/LottoContainer";
 import TodoParent from "@/components/todo/TodoParent";
+import NewRecipeApp from "@/components/recipe/RecipeContainer";
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,7 @@ const router = new VueRouter({
     { path: "/note", component: NoteApp },
     { path: "/lotto", component: LottoApp },
     { path: "/todo", component: TodoParent },
+    { path: "/new-recipe", component: NewRecipeApp },
   ],
 });
 
